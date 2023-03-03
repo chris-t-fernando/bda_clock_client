@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: bda-clock
+Version: 1.0
+Summary: Client and Python object for interacting with BDA Clocks
+Home-page: https://github.com/chris-t-fernando/bda_clock
+Author: Chris Fernando
+Author-email: chris.t.fernando@gmail.com
