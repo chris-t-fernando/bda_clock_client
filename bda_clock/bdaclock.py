@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 
 # from .config import urlbase
-from .config import *
+from . import config
 import json
 
 
@@ -14,21 +14,21 @@ class BdaClock:
 
     def __init__(self, id: str):
         self.id = id
-        response = requests.get(f"{urlbase}{id}")
+        response = requests.get(f"{config.urlbase}{id}")
         response_json = json.loads(response.text)
         self.now = response_json["now"]
         self.start = response_json["start"]
         self.interval = response_json["interval"]
 
     def tick(self):
-        url = f"{urlbase}{self.id}/tick"
+        url = f"{config.urlbase}{self.id}/tick"
         response = requests.put(url)
         response_json = json.loads(response.text)
         self.now = response_json["now"]
         return self.now
 
     def reset(self):
-        url = f"{urlbase}{self.id}/reset"
+        url = f"{config.urlbase}{self.id}/reset"
         response = requests.put(url)
         response_json = json.loads(response.text)
         self.now = response_json["now"]

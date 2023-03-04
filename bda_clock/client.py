@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime
-from bda_clock import config
+from . import config
 
 
 class ClockCreateFailed(Exception):
