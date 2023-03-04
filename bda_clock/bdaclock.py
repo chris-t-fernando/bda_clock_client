@@ -1,6 +1,8 @@
 import requests
 from datetime import datetime
-import config
+
+# from .config import urlbase
+from bda_clock import config
 import json
 
 
