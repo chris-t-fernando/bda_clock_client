@@ -6,6 +6,10 @@ from . import config
 import json
 
 
+class NoSuchClockError(Exception):
+    ...
+
+
 class BdaClock:
     id: str
     start: datetime
@@ -15,6 +19,11 @@ class BdaClock:
     def __init__(self, id: str):
         self.id = id
         response = requests.get(f"{config.urlbase}{id}")
+        if response.status_code != 200:
+            raise NoSuchClockError(
+                f"Clock initialisation failed. API returned: {response.text}"
+            )
+
         response_json = json.loads(response.text)
         self.now = response_json["now"]
         self.start = response_json["start"]

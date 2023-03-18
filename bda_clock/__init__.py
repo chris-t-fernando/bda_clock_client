@@ -1,2 +1,2 @@
-from .bdaclock import BdaClock
+from .bdaclock import BdaClock, NoSuchClockError
 from . import config
