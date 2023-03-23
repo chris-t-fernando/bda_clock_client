@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name="bda_clock",
-    version="1.13",
+    version="1.14",
     description="Client and Python object for interacting with BDA Clocks",
     author="Chris Fernando",
     author_email="chris.t.fernando@gmail.com",
